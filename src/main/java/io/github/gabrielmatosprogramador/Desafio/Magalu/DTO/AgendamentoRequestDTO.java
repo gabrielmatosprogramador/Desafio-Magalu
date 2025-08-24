@@ -1,6 +1,7 @@
 package io.github.gabrielmatosprogramador.Desafio.Magalu.DTO;
 
 import io.github.gabrielmatosprogramador.Desafio.Magalu.ENUMS.canalComunicacao;
+import io.github.gabrielmatosprogramador.Desafio.Magalu.ENUMS.statusAgendamento;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -14,7 +15,8 @@ public record AgendamentoRequestDTO(
     String mensagem,
     @NotBlank(message = "O Canal de Comunicação é obrigatório!")
     canalComunicacao canalComunicacao,
-
+    @NotBlank(message = "O status é obrigatório!")
+    statusAgendamento status,
     @NotNull(message = "A Data e hora devem ser definidas!")
     @Future(message = "A data e hora de envio são obrigatórias!")
     LocalDateTime dataHoraEnvio
