@@ -26,13 +26,20 @@ public class Agendamento {
     @Column(nullable = false)
     private String mensagem;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private canalComunicacao comunicacao;
 
-    @Column
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private statusAgendamento status;
 
-    @Column
-    private LocalDateTime dataHoraCriacao;
+    @Column(nullable = false)
+    private LocalDateTime criadoEm;
+
+    @Column(nullable = false)
+    private LocalDateTime dataHoraEnvio;
+
+
 
 }
